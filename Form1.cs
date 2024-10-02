@@ -2,6 +2,8 @@ namespace CrabCash
 {
     public partial class Form1 : Form
     {
+
+        List<Group> groups;
         public Form1()
         {
             InitializeComponent();
@@ -9,28 +11,35 @@ namespace CrabCash
 
 
 
-        static void WriteToFile(string amount, string group)
+        static void WriteToFile(string[] data, bool writeDate, string fileName)
         {
-            // Get the path of the executable's directory and create a "data" folder within it
+            // Obtener la ruta del directorio donde está el ejecutable y crear la carpeta "data" dentro de él
             string directoryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data");
 
-            // Ensure that the "data" directory exists
+            // Asegurarse de que el directorio "data" exista
             if (!Directory.Exists(directoryPath))
             {
                 Directory.CreateDirectory(directoryPath);
             }
-            // Create the full file path within the "data" folder
-            string filePath = Path.Combine(directoryPath, "gst.yt");
 
-            // Use StreamWriter with "true" to append to the file if it exists, or create it if it doesn't
+            // Crear la ruta completa del archivo dentro de la carpeta "data"
+            string filePath = Path.Combine(directoryPath, fileName);
+
+            // Usar StreamWriter con "true" para añadir al archivo si ya existe, o crearlo si no existe
             using (StreamWriter writer = new StreamWriter(filePath, true))
             {
-                // Get the current date and time
-                string currentDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                // Write the date, values separated by "|", and then go to the next line
-                writer.WriteLine($"{currentDate}|{amount}|{group}");
+                // Escribir la fecha y hora actuales si writeDate es true
+                if (writeDate)
+                {
+                    string currentDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    writer.Write(currentDate + "|");
+                }
+
+                // Escribir todos los elementos del arreglo en una sola línea, separados por "|"
+                writer.WriteLine(string.Join("|", data));
             }
         }
+
 
         public static List<Group> GetGroups(string filePath)
         {
@@ -47,14 +56,15 @@ namespace CrabCash
                     // Split the line using '|' as separator
                     string[] parts = line.Split('|');
 
-                    if (parts.Length == 3)
+                    if (parts.Length == 4)
                     {
                         // Convert and add the data to the groups list
                         Group group = new Group
                         {
                             ID = int.Parse(parts[0]), // ID
                             Name = parts[1],           // Name
-                            AllocatedMoney = decimal.Parse(parts[2]) // Allocated money
+                            AllocatedMoney = decimal.Parse(parts[2]), // Allocated money
+                            Prioritary = (parts[3] == "1")
                         };
 
                         groups.Add(group);
@@ -111,7 +121,7 @@ namespace CrabCash
 
         private void labelSaving_Click(object sender, EventArgs e)
         {
-           
+
         }
 
 
@@ -120,18 +130,31 @@ namespace CrabCash
             public int ID { get; set; }
             public string Name { get; set; }
             public decimal AllocatedMoney { get; set; }
+            public bool Prioritary { get; set; }
             public override string ToString()
             {
                 return Name; // Solo mostrar el nombre en el ComboBox
             }
         }
 
+        void updateGroups() {
+            groups = GetGroups("data/groups.yt");
+            comboBoxGroups.DataSource = groups;
+            listBoxGroups.DataSource = groups;
+        }
+
         private void Form1_Activated(object sender, EventArgs e)
         {
             CreateFileIfNotExists("data/groups.yt");
             CreateFileIfNotExists("data/gst.yt");
-            List<Group> groups = GetGroups("data/groups.yt");
-            comboBoxGroups.DataSource = groups;
+            updateGroups();
+        }
+
+        private void btnAddGroup_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(groups.Count.ToString());
+            WriteToFile(new string[] { groups.Count + 1.ToString(), textBoxGroupName.Text, textBoxDestinatedAmount.Text, (comboBoxpriority.SelectedItem.ToString() == "Prioritario").ToString() }, false, "groups.yt");
+            updateGroups();
         }
     }
 }

@@ -31,3 +31,4 @@ C:\Users\FRANK\Desktop\CSProjects\CrabCash\obj\Debug\net8.0-windows\refint\CrabC
 C:\Users\FRANK\Desktop\CSProjects\CrabCash\obj\Debug\net8.0-windows\CrabCash.pdb
 C:\Users\FRANK\Desktop\CSProjects\CrabCash\obj\Debug\net8.0-windows\CrabCash.genruntimeconfig.cache
 C:\Users\FRANK\Desktop\CSProjects\CrabCash\obj\Debug\net8.0-windows\ref\CrabCash.dll
+C:\Users\TONY\source\repos\CrabCash\obj\Debug\net8.0-windows\CrabCash.sourcelink.json

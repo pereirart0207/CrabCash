@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrabCash")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af0a743c4da6b94e743b778cd2c421cf2f7c7e97")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+111a6ba0902126a4d7f3034afdc7332e85911fde")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrabCash")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrabCash")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
