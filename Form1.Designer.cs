@@ -33,7 +33,7 @@
             tabPageOutput = new TabPage();
             btnAddBuy = new Button();
             labelGroup = new Label();
-            comboBox1 = new ComboBox();
+            comboBoxGroups = new ComboBox();
             label2 = new Label();
             textBox2 = new TextBox();
             labelAmount = new Label();
@@ -73,34 +73,37 @@
             tabControl1.Controls.Add(tabPageOutput);
             tabControl1.Controls.Add(tabPageGroup);
             tabControl1.Controls.Add(tabPageInput);
-            tabControl1.Location = new Point(12, 12);
+            tabControl1.Location = new Point(10, 9);
+            tabControl1.Margin = new Padding(3, 2, 3, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(348, 333);
+            tabControl1.Size = new Size(304, 250);
             tabControl1.TabIndex = 0;
             // 
             // tabPageOutput
             // 
             tabPageOutput.Controls.Add(btnAddBuy);
             tabPageOutput.Controls.Add(labelGroup);
-            tabPageOutput.Controls.Add(comboBox1);
+            tabPageOutput.Controls.Add(comboBoxGroups);
             tabPageOutput.Controls.Add(label2);
             tabPageOutput.Controls.Add(textBox2);
             tabPageOutput.Controls.Add(labelAmount);
             tabPageOutput.Controls.Add(textBox1);
-            tabPageOutput.Location = new Point(4, 29);
+            tabPageOutput.Location = new Point(4, 24);
+            tabPageOutput.Margin = new Padding(3, 2, 3, 2);
             tabPageOutput.Name = "tabPageOutput";
-            tabPageOutput.Padding = new Padding(3);
-            tabPageOutput.Size = new Size(340, 300);
+            tabPageOutput.Padding = new Padding(3, 2, 3, 2);
+            tabPageOutput.Size = new Size(296, 222);
             tabPageOutput.TabIndex = 0;
             tabPageOutput.Text = "Gastos";
             tabPageOutput.UseVisualStyleBackColor = true;
             // 
             // btnAddBuy
             // 
-            btnAddBuy.Location = new Point(15, 226);
+            btnAddBuy.Location = new Point(13, 170);
+            btnAddBuy.Margin = new Padding(3, 2, 3, 2);
             btnAddBuy.Name = "btnAddBuy";
-            btnAddBuy.Size = new Size(303, 45);
+            btnAddBuy.Size = new Size(265, 34);
             btnAddBuy.TabIndex = 6;
             btnAddBuy.Text = "Agregar Gasto";
             btnAddBuy.UseVisualStyleBackColor = true;
@@ -108,51 +111,54 @@
             // labelGroup
             // 
             labelGroup.AutoSize = true;
-            labelGroup.Location = new Point(114, 9);
+            labelGroup.Location = new Point(100, 7);
             labelGroup.Name = "labelGroup";
-            labelGroup.Size = new Size(50, 20);
+            labelGroup.Size = new Size(40, 15);
             labelGroup.TabIndex = 5;
             labelGroup.Text = "Grupo";
             // 
-            // comboBox1
+            // comboBoxGroups
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(117, 31);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(201, 28);
-            comboBox1.TabIndex = 4;
+            comboBoxGroups.FormattingEnabled = true;
+            comboBoxGroups.Location = new Point(102, 23);
+            comboBoxGroups.Margin = new Padding(3, 2, 3, 2);
+            comboBoxGroups.Name = "comboBoxGroups";
+            comboBoxGroups.Size = new Size(176, 23);
+            comboBoxGroups.TabIndex = 4;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(15, 78);
+            label2.Location = new Point(13, 58);
             label2.Name = "label2";
-            label2.Size = new Size(87, 20);
+            label2.Size = new Size(69, 15);
             label2.TabIndex = 3;
             label2.Text = "Descripción";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(15, 101);
+            textBox2.Location = new Point(13, 76);
+            textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(303, 100);
+            textBox2.Size = new Size(266, 76);
             textBox2.TabIndex = 2;
             // 
             // labelAmount
             // 
             labelAmount.AutoSize = true;
-            labelAmount.Location = new Point(12, 9);
+            labelAmount.Location = new Point(10, 7);
             labelAmount.Name = "labelAmount";
-            labelAmount.Size = new Size(53, 20);
+            labelAmount.Size = new Size(43, 15);
             labelAmount.TabIndex = 1;
             labelAmount.Text = "Monto";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(15, 32);
+            textBox1.Location = new Point(13, 24);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(64, 27);
+            textBox1.Size = new Size(56, 23);
             textBox1.TabIndex = 0;
             // 
             // tabPageGroup
@@ -168,10 +174,11 @@
             tabPageGroup.Controls.Add(comboBox2);
             tabPageGroup.Controls.Add(label4);
             tabPageGroup.Controls.Add(textBox3);
-            tabPageGroup.Location = new Point(4, 29);
+            tabPageGroup.Location = new Point(4, 24);
+            tabPageGroup.Margin = new Padding(3, 2, 3, 2);
             tabPageGroup.Name = "tabPageGroup";
-            tabPageGroup.Padding = new Padding(3);
-            tabPageGroup.Size = new Size(340, 300);
+            tabPageGroup.Padding = new Padding(3, 2, 3, 2);
+            tabPageGroup.Size = new Size(296, 222);
             tabPageGroup.TabIndex = 1;
             tabPageGroup.Text = "Grupos";
             tabPageGroup.UseVisualStyleBackColor = true;
@@ -180,42 +187,45 @@
             // 
             comboBox3.FormattingEnabled = true;
             comboBox3.Items.AddRange(new object[] { "€", "%" });
-            comboBox3.Location = new Point(94, 106);
+            comboBox3.Location = new Point(82, 80);
+            comboBox3.Margin = new Padding(3, 2, 3, 2);
             comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(44, 28);
+            comboBox3.Size = new Size(39, 23);
             comboBox3.TabIndex = 10;
             comboBox3.Text = "€";
             // 
             // labelDestinatedAmount
             // 
             labelDestinatedAmount.AutoSize = true;
-            labelDestinatedAmount.Location = new Point(18, 83);
+            labelDestinatedAmount.Location = new Point(16, 62);
             labelDestinatedAmount.Name = "labelDestinatedAmount";
-            labelDestinatedAmount.Size = new Size(77, 20);
+            labelDestinatedAmount.Size = new Size(60, 15);
             labelDestinatedAmount.TabIndex = 9;
             labelDestinatedAmount.Text = "Destinado";
             // 
             // textBoxDestinatedAmount
             // 
-            textBoxDestinatedAmount.Location = new Point(18, 106);
+            textBoxDestinatedAmount.Location = new Point(16, 80);
+            textBoxDestinatedAmount.Margin = new Padding(3, 2, 3, 2);
             textBoxDestinatedAmount.Name = "textBoxDestinatedAmount";
-            textBoxDestinatedAmount.Size = new Size(70, 27);
+            textBoxDestinatedAmount.Size = new Size(62, 23);
             textBoxDestinatedAmount.TabIndex = 8;
             // 
             // labelPriority
             // 
             labelPriority.AutoSize = true;
-            labelPriority.Location = new Point(202, 17);
+            labelPriority.Location = new Point(177, 13);
             labelPriority.Name = "labelPriority";
-            labelPriority.Size = new Size(39, 20);
+            labelPriority.Size = new Size(30, 15);
             labelPriority.TabIndex = 7;
             labelPriority.Text = "Tipo";
             // 
             // btnDeleteGroup
             // 
-            btnDeleteGroup.Location = new Point(261, 264);
+            btnDeleteGroup.Location = new Point(228, 198);
+            btnDeleteGroup.Margin = new Padding(3, 2, 3, 2);
             btnDeleteGroup.Name = "btnDeleteGroup";
-            btnDeleteGroup.Size = new Size(58, 29);
+            btnDeleteGroup.Size = new Size(51, 22);
             btnDeleteGroup.TabIndex = 6;
             btnDeleteGroup.Text = "Borrar";
             btnDeleteGroup.UseVisualStyleBackColor = true;
@@ -223,25 +233,28 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(18, 148);
+            label5.Location = new Point(16, 111);
             label5.Name = "label5";
-            label5.Size = new Size(56, 20);
+            label5.Size = new Size(45, 15);
             label5.TabIndex = 5;
             label5.Text = "Grupos";
             // 
             // listBoxGroups
             // 
             listBoxGroups.FormattingEnabled = true;
-            listBoxGroups.Location = new Point(18, 174);
+            listBoxGroups.ItemHeight = 15;
+            listBoxGroups.Location = new Point(16, 130);
+            listBoxGroups.Margin = new Padding(3, 2, 3, 2);
             listBoxGroups.Name = "listBoxGroups";
-            listBoxGroups.Size = new Size(302, 84);
+            listBoxGroups.Size = new Size(265, 64);
             listBoxGroups.TabIndex = 4;
             // 
             // btnAddGroup
             // 
-            btnAddGroup.Location = new Point(163, 85);
+            btnAddGroup.Location = new Point(143, 64);
+            btnAddGroup.Margin = new Padding(3, 2, 3, 2);
             btnAddGroup.Name = "btnAddGroup";
-            btnAddGroup.Size = new Size(156, 49);
+            btnAddGroup.Size = new Size(136, 37);
             btnAddGroup.TabIndex = 3;
             btnAddGroup.Text = "Agregar";
             btnAddGroup.UseVisualStyleBackColor = true;
@@ -250,26 +263,28 @@
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "Prioritario", "Manejable" });
-            comboBox2.Location = new Point(202, 39);
+            comboBox2.Location = new Point(177, 29);
+            comboBox2.Margin = new Padding(3, 2, 3, 2);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(118, 28);
+            comboBox2.Size = new Size(104, 23);
             comboBox2.TabIndex = 2;
             comboBox2.Text = "Prioritario";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(18, 17);
+            label4.Location = new Point(16, 13);
             label4.Name = "label4";
-            label4.Size = new Size(64, 20);
+            label4.Size = new Size(51, 15);
             label4.TabIndex = 1;
             label4.Text = "Nombre";
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(18, 40);
+            textBox3.Location = new Point(16, 30);
+            textBox3.Margin = new Padding(3, 2, 3, 2);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(178, 27);
+            textBox3.Size = new Size(156, 23);
             textBox3.TabIndex = 0;
             // 
             // tabPageInput
@@ -279,19 +294,21 @@
             tabPageInput.Controls.Add(textBox4);
             tabPageInput.Controls.Add(label6);
             tabPageInput.Controls.Add(textBoxMonthAmount);
-            tabPageInput.Location = new Point(4, 29);
+            tabPageInput.Location = new Point(4, 24);
+            tabPageInput.Margin = new Padding(3, 2, 3, 2);
             tabPageInput.Name = "tabPageInput";
-            tabPageInput.Padding = new Padding(3);
-            tabPageInput.Size = new Size(340, 300);
+            tabPageInput.Padding = new Padding(3, 2, 3, 2);
+            tabPageInput.Size = new Size(296, 222);
             tabPageInput.TabIndex = 2;
             tabPageInput.Text = "Entrada";
             tabPageInput.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            button1.Location = new Point(207, 242);
+            button1.Location = new Point(181, 182);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(115, 40);
+            button1.Size = new Size(101, 30);
             button1.TabIndex = 6;
             button1.Text = "Agregar";
             button1.UseVisualStyleBackColor = true;
@@ -299,41 +316,43 @@
             // labelMotive
             // 
             labelMotive.AutoSize = true;
-            labelMotive.Location = new Point(104, 9);
+            labelMotive.Location = new Point(91, 7);
             labelMotive.Name = "labelMotive";
-            labelMotive.Size = new Size(56, 20);
+            labelMotive.Size = new Size(45, 15);
             labelMotive.TabIndex = 5;
             labelMotive.Text = "Motivo";
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(107, 32);
+            textBox4.Location = new Point(94, 24);
+            textBox4.Margin = new Padding(3, 2, 3, 2);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(215, 27);
+            textBox4.Size = new Size(189, 23);
             textBox4.TabIndex = 4;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(9, 9);
+            label6.Location = new Point(8, 7);
             label6.Name = "label6";
-            label6.Size = new Size(62, 20);
+            label6.Size = new Size(49, 15);
             label6.TabIndex = 3;
             label6.Text = "Importe";
             // 
             // textBoxMonthAmount
             // 
-            textBoxMonthAmount.Location = new Point(12, 32);
+            textBoxMonthAmount.Location = new Point(10, 24);
+            textBoxMonthAmount.Margin = new Padding(3, 2, 3, 2);
             textBoxMonthAmount.Name = "textBoxMonthAmount";
-            textBoxMonthAmount.Size = new Size(79, 27);
+            textBoxMonthAmount.Size = new Size(70, 23);
             textBoxMonthAmount.TabIndex = 2;
             // 
             // labelSaving
             // 
             labelSaving.AutoSize = true;
-            labelSaving.Location = new Point(16, 354);
+            labelSaving.Location = new Point(14, 266);
             labelSaving.Name = "labelSaving";
-            labelSaving.Size = new Size(61, 20);
+            labelSaving.Size = new Size(49, 15);
             labelSaving.TabIndex = 1;
             labelSaving.Text = "Ahorros";
             labelSaving.Click += labelSaving_Click;
@@ -342,53 +361,53 @@
             // 
             labelSVG.AutoSize = true;
             labelSVG.Font = new Font("Segoe UI", 23F);
-            labelSVG.Location = new Point(12, 374);
+            labelSVG.Location = new Point(10, 280);
             labelSVG.Name = "labelSVG";
-            labelSVG.Size = new Size(114, 52);
+            labelSVG.Size = new Size(93, 42);
             labelSVG.TabIndex = 2;
             labelSVG.Text = "0.00€";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(179, 374);
+            label1.Location = new Point(157, 280);
             label1.Name = "label1";
-            label1.Size = new Size(126, 20);
+            label1.Size = new Size(101, 15);
             label1.TabIndex = 3;
             label1.Text = "Gastos asumibles:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(179, 410);
+            label3.Location = new Point(157, 308);
             label3.Name = "label3";
-            label3.Size = new Size(115, 20);
+            label3.Size = new Size(91, 15);
             label3.TabIndex = 4;
             label3.Text = "Gastos posibles:";
             // 
             // labelAsGastos
             // 
             labelAsGastos.AutoSize = true;
-            labelAsGastos.Location = new Point(305, 374);
+            labelAsGastos.Location = new Point(267, 280);
             labelAsGastos.Name = "labelAsGastos";
-            labelAsGastos.Size = new Size(44, 20);
+            labelAsGastos.Size = new Size(34, 15);
             labelAsGastos.TabIndex = 5;
             labelAsGastos.Text = "0.00€";
             // 
             // labelPosGastos
             // 
             labelPosGastos.AutoSize = true;
-            labelPosGastos.Location = new Point(305, 406);
+            labelPosGastos.Location = new Point(267, 304);
             labelPosGastos.Name = "labelPosGastos";
-            labelPosGastos.Size = new Size(44, 20);
+            labelPosGastos.Size = new Size(34, 15);
             labelPosGastos.TabIndex = 6;
             labelPosGastos.Text = "0.00€";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(372, 435);
+            ClientSize = new Size(326, 326);
             Controls.Add(labelPosGastos);
             Controls.Add(labelAsGastos);
             Controls.Add(label3);
@@ -397,8 +416,10 @@
             Controls.Add(labelSaving);
             Controls.Add(tabControl1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             Text = "CrabCash";
+            Activated += Form1_Activated;
             tabControl1.ResumeLayout(false);
             tabPageOutput.ResumeLayout(false);
             tabPageOutput.PerformLayout();
@@ -421,7 +442,7 @@
         private TextBox textBox1;
         private TabPage tabPageInput;
         private Label labelGroup;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxGroups;
         private Button btnAddBuy;
         private Label labelSaving;
         private Label labelSVG;
