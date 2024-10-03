@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace CrabCash
 {
     public partial class Form1 : Form
@@ -10,8 +12,10 @@ namespace CrabCash
             InitializeComponent();
         }
 
-        static void WriteToFile(string[] data, bool writeDate, string fileName)
+        static void NewPurchase(Purchase purchase, string fileName)
         {
+
+            string[] purchaseData = {purchase.CreatedAt.ToString(), purchase.Amount.ToString(), purchase.Group.ToString(), purchase.Data.ToString() };
             string directoryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data");
 
             if (!Directory.Exists(directoryPath))
@@ -23,25 +27,44 @@ namespace CrabCash
 
             using (StreamWriter writer = new StreamWriter(filePath, true))
             {
-                if (writeDate)
-                {
-                    string currentDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                    writer.Write(currentDate + "|");
-                }
 
-                writer.WriteLine(string.Join("|", data));
+                writer.WriteLine(string.Join("|", purchaseData));
             }
         }
 
-       float getBuyByGroup(Group group)
+
+        List<Purchase> GetPurchases()
         {
-            float sum = 0;
+            List<Purchase> purchases = new List<Purchase>();
+            
+            string[] lines = File.ReadAllLines("data/gst.yt");
+
+            foreach (string line in lines)
+            {
+                string[] items = line.Split("|");
+
+                Purchase purchase = new Purchase
+                {
+                    CreatedAt = ConvertStringToDateTime(items[0]),
 
 
-            return sum;
+                };
+                
+            }
 
-        
+
+            return purchases;
         }
+
+
+        public static string ConvertDateTimeToString(DateTime dateTime)
+        {
+            return dateTime.ToString("dd/MM/yyyy HH:mm:ss");
+        }
+        public static DateTime ConvertStringToDateTime(string dateString)
+        {
+            return DateTime.ParseExact(dateString, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+        } 
 
         public static List<Group> GetGroups(string filePath)
         {
@@ -158,15 +181,15 @@ namespace CrabCash
 
 
 
-
-        public class Buy {
+        
+        public class Purchase {
 
             public DateTime CreatedAt { get; set; }
             public decimal Amount {  get; set; }
             public string Group {  get; set; }
             public string Data { get; set; }
 
-            public Buy() { 
+            public Purchase() { 
             CreatedAt = DateTime.Now;
             }
         
@@ -338,13 +361,17 @@ namespace CrabCash
 
         private void btnAddBuy_Click(object sender, EventArgs e)
         {
+            Purchase purchase = new Purchase();
+
+            purchase.Data = textBoxBuyInfo.Text;
+            purchase.Amount = decimal.Parse(textBoxAmount.Text);
+
             if (comboBoxGroups.SelectedItem != null)
             {
                 Group selectedGroup = comboBoxGroups.SelectedItem as Group;
+                purchase.Group = selectedGroup.ID.ToString(); 
 
-                string uuid = selectedGroup.ID.ToString();
-
-                WriteToFile(new string[] { textBoxAmount.Text, textBoxBuyInfo.Text, uuid }, true, "gst.yt");
+                NewPurchase(purchase, "gst.yt");
             }
         }
 
