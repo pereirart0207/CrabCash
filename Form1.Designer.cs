@@ -150,7 +150,7 @@
             // labelAmount
             // 
             labelAmount.AutoSize = true;
-            labelAmount.Location = new Point(10, 7);
+            labelAmount.Location = new Point(11, 7);
             labelAmount.Name = "labelAmount";
             labelAmount.Size = new Size(43, 15);
             labelAmount.TabIndex = 1;
@@ -430,7 +430,7 @@
             // labelPosGastos
             // 
             labelPosGastos.AutoSize = true;
-            labelPosGastos.Location = new Point(267, 304);
+            labelPosGastos.Location = new Point(267, 307);
             labelPosGastos.Name = "labelPosGastos";
             labelPosGastos.Size = new Size(34, 15);
             labelPosGastos.TabIndex = 6;
@@ -440,7 +440,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(326, 326);
+            ClientSize = new Size(326, 336);
             Controls.Add(labelPosGastos);
             Controls.Add(labelAsGastos);
             Controls.Add(label3);

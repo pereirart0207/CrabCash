@@ -33,6 +33,16 @@ namespace CrabCash
             }
         }
 
+       float getBuyByGroup(Group group)
+        {
+            float sum = 0;
+
+
+            return sum;
+
+        
+        }
+
         public static List<Group> GetGroups(string filePath)
         {
             List<Group> groupsT = new List<Group>();
@@ -145,6 +155,26 @@ namespace CrabCash
                 return Name;
             }
         }
+
+
+
+
+        public class Buy {
+
+            public DateTime CreatedAt { get; set; }
+            public decimal Amount {  get; set; }
+            public string Group {  get; set; }
+            public string Data { get; set; }
+
+            public Buy() { 
+            CreatedAt = DateTime.Now;
+            }
+        
+        
+        
+        }
+
+
 
         void updateGroups()
         {
