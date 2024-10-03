@@ -291,10 +291,19 @@ namespace CrabCash
 
         private void textBoxDestinatedAmount_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+
+            // Permitir solo dígitos, un punto decimal, y teclas de control como Backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
-                e.Handled = true;
+                e.Handled = true; // Bloquear entrada no permitida
             }
+
+            // Solo permitir un único punto decimal
+            if (e.KeyChar == '.' && textBoxDestinatedAmount.Text.Contains('.'))
+            {
+                e.Handled = true; // Bloquear si ya hay un punto decimal
+            }
+
         }
 
         private void btnAddBuy_Click(object sender, EventArgs e)
@@ -311,9 +320,16 @@ namespace CrabCash
 
         private void textBoxAmount_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            // Permitir solo dígitos, un punto decimal, y teclas de control como Backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
-                e.Handled = true;
+                e.Handled = true; // Bloquear entrada no permitida
+            }
+
+            // Solo permitir un único punto decimal
+            if (e.KeyChar == '.' && textBoxAmount.Text.Contains('.'))
+            {
+                e.Handled = true; // Bloquear si ya hay un punto decimal
             }
         }
     }
